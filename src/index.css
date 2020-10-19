@@ -8,22 +8,22 @@ body {
   font-family: "montseratt", sans-serif;
 }
 .App {
-  background-image: url("./img/cold-bg.jpg");
+  background-image: url("./img/warm-bg.jpg");
   background-size: cover;
   background-position: bottom;
   transition: 0.4s ease-out;
 }
 
-.App.warm {
-  background-image: url("./img/warm-bg.jpg");
+.App.cold {
+  background-image: url("./img/cold-bg.jpg");
 }
 
 main {
   min-height: 100vh;
   background-image: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.75)
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.1)
   );
   padding: 25px;
 }
@@ -66,7 +66,7 @@ main {
 }
 
 .location-box .date {
-  color: #FFF;
+  color: #fff;
   font-size: 20px;
   font-weight: 300;
   font-style: italic;
@@ -78,16 +78,16 @@ main {
   text-align: center;
 }
 
-.weather-box .temp{
+.weather-box .temp {
   position: relative;
   display: inline-block;
-  margin:30px auto;
-  background-color: rgba(255,255,255,0.2);
+  margin: 30px auto;
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 16px;
 
-  padding: 15px 25px ;
+  padding: 15px 25px;
 
-  color: #FFF;
+  color: #fff;
   font-size: 102px;
   font-weight: 900;
 
@@ -97,7 +97,7 @@ main {
 }
 
 .weather-box .weather {
-  color: #FFF;
+  color: #fff;
   font-size: 48px;
   font-weight: 700;
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
