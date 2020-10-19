@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Get-Weather/static/css/main.0af91ad5.chunk.css",
+    "main.js": "/Get-Weather/static/js/main.a2cb57c1.chunk.js",
+    "main.js.map": "/Get-Weather/static/js/main.a2cb57c1.chunk.js.map",
+    "runtime-main.js": "/Get-Weather/static/js/runtime-main.7b90c049.js",
+    "runtime-main.js.map": "/Get-Weather/static/js/runtime-main.7b90c049.js.map",
+    "static/js/2.6475ed6c.chunk.js": "/Get-Weather/static/js/2.6475ed6c.chunk.js",
+    "static/js/2.6475ed6c.chunk.js.map": "/Get-Weather/static/js/2.6475ed6c.chunk.js.map",
+    "index.html": "/Get-Weather/index.html",
+    "precache-manifest.84ac2d19a68b29454d7805b738d9a400.js": "/Get-Weather/precache-manifest.84ac2d19a68b29454d7805b738d9a400.js",
+    "service-worker.js": "/Get-Weather/service-worker.js",
+    "static/css/main.0af91ad5.chunk.css.map": "/Get-Weather/static/css/main.0af91ad5.chunk.css.map",
+    "static/js/2.6475ed6c.chunk.js.LICENSE.txt": "/Get-Weather/static/js/2.6475ed6c.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/Get-Weather/static/media/warm-bg.635ed87d.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7b90c049.js",
+    "static/js/2.6475ed6c.chunk.js",
+    "static/css/main.0af91ad5.chunk.css",
+    "static/js/main.a2cb57c1.chunk.js"
+  ]
+}
