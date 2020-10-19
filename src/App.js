@@ -6,10 +6,12 @@ const api = {
 };
 
 function App() {
+  const [enter, setEnter] = useState(false);
   const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({});
 
   const search = (evt) => {
+    setEnter(true);
     if (evt.key === "Enter") {
       fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
         .then((res) => res.json())
@@ -63,34 +65,58 @@ function App() {
           : "App"
       }
     >
-      <main>
-        <div className="search-box">
-          <input
-            type="text"
-            className="search-bar"
-            placeholder="Search..."
-            onChange={(e) => setQuery(e.target.value)}
-            value={query}
-            onKeyPress={search}
-          />
-        </div>
-        {typeof weather.main != "undefined" ? (
-          <div>
-            <div className="location-box">
-              <div className="location">
-                {weather.name}, {weather.sys.country}
-              </div>
-              <div className="date">{dateBuilder(new Date())}</div>
-            </div>
-            <div className="weather-box">
-              <div className="temp">{Math.round(weather.main.temp)}°C</div>
-              <div className="weather">{weather.weather[0].main}</div>
-            </div>
+      {enter ? (
+        <main>
+          <div className="search-box">
+            <input
+              type="text"
+              className="search-bar"
+              placeholder="Search..."
+              onChange={(e) => setQuery(e.target.value)}
+              value={query}
+              onKeyPress={search}
+            />
           </div>
-        ) : (
-          ""
-        )}
-      </main>
+          {typeof weather.main != "undefined" ? (
+            <div>
+              <div className="location-box">
+                <div className="location">
+                  {weather.name}, {weather.sys.country}
+                </div>
+                <div className="date">{dateBuilder(new Date())}</div>
+              </div>
+              <div className="weather-box">
+                <div className="temp">{Math.round(weather.main.temp)}°C</div>
+                <div className="weather">{weather.weather[0].main}</div>
+              </div>
+            </div>
+          ) : (
+            <div className="location-box">
+              <div className="location">Sorry, no results found.</div>
+            </div>
+          )}
+        </main>
+      ) : (
+        <main>
+          <div className="search-box">
+            <input
+              type="text"
+              className="search-bar"
+              placeholder="Search..."
+              onChange={(e) => setQuery(e.target.value)}
+              value={query}
+              onKeyPress={search}
+            />
+          </div>
+          <div className="weather-box">
+            <div className="weather">Welcome to Get-Weather</div>
+          </div>
+          <br />
+          <div className="location-box">
+            <div className="location">Search and get started.</div>
+          </div>
+        </main>
+      )}
     </div>
   );
 }
