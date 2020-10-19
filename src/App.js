@@ -9,6 +9,7 @@ function App() {
   const [enter, setEnter] = useState(false);
   const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({});
+  const [available, setAvailable] = useState(false);
 
   const search = (evt) => {
     setEnter(true);
@@ -16,8 +17,10 @@ function App() {
       fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
         .then((res) => res.json())
         .then((result) => {
+          setAvailable(true);
           setWeather(result);
           setQuery("");
+          console.log(result);
         });
     }
   };
@@ -90,9 +93,13 @@ function App() {
                 <div className="weather">{weather.weather[0].main}</div>
               </div>
             </div>
-          ) : (
+          ) : available ? (
             <div className="location-box">
               <div className="location">Sorry, no results found.</div>
+            </div>
+          ) : (
+            <div className="location-box">
+              <div className="location">Searching...</div>
             </div>
           )}
         </main>
